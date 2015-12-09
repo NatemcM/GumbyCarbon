@@ -1,0 +1,23 @@
+// Backgrounds 
+
+.background {
+	
+	@each $shade in $ui-coloring {
+    &.#{nth($shade, 1)} {
+      background: nth($shade, 2);
+    }
+  }	
+  
+  @each $shade in $ui-coloring {
+    &.#{nth($shade, 1)}-hover {
+      background: nth($shade, 3);
+    }
+  }	
+  
+}
+
+.alt-row {
+ 	background:$alt-background-color;
+	padding:$alt-padding;
+	margin:$alt-margin;
+}

@@ -1,0 +1,27 @@
+// Auto prefix elements
+
+@mixin auto-prefix-transition($exp) {
+	-o-transition:$exp;
+  	-webkit-transition:$exp;
+  	-moz-transition:$exp;;
+  	transition:$exp;;
+}
+
+@mixin auto-prefix-shadow($exp) {
+	-webkit-box-shadow:$exp;
+    -moz-box-shadow:$exp;
+    box-shadow:$exp;
+}
+
+@mixin auto-prefix-radius($radius) {
+	 -webkit-border-radius: $radius;
+	 -moz-border-radius: $radius;
+	 border-radius: $radius;
+}
+
+@mixin auto-prefix-transform($transform) {
+	-ms-transform:$transform;
+	-webkit-transform:$transform;
+	-moz-transform:$transform;
+	transform:$transform;
+}

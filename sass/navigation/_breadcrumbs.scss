@@ -1,0 +1,50 @@
+/*****************************************************
+*
+* BREADCRUMB LINKS
+*
+******************************************************/
+
+.breadcrumb
+{ 
+	margin-top:10px;
+	
+	ul
+	{
+		margin: 0;
+	
+		li
+		{
+			display: inline-block;
+			padding:0 2px;
+			font-size: 0.925em;
+			
+			a
+			{
+				color:$primary-color;
+				
+				&:hover
+				{
+					text-decoration:underline;
+				}
+			}
+			
+			&:after
+			{
+				font-family: FontAwesome;
+  				content: " \f101 ";
+			}
+			
+			&:last-child
+			{
+				&:after
+				{
+					content:'';	
+				}
+			}
+			
+			span {
+				margin-right: 2px
+			}
+		}
+	}
+}

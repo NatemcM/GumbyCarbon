@@ -1,0 +1,38 @@
+/*****************************************************
+*
+* SIDE NAVIGATION
+*
+******************************************************/
+
+.side-nav 
+{
+  display: block;
+  list-style-position: outside;
+  list-style-type: none;
+  margin: 0;
+  padding: 0.77778rem 0;
+  
+	li 
+	{
+	  margin: 0;
+	  padding: 0;
+	  @include auto-prefix-transition(all ease 0.2s);
+		  
+	  &:hover,
+	  &:focus 
+	  {
+		background: rgba(0, 0, 0, 0.025);
+		padding-left:6px;
+		}
+	}
+	
+	li a:not(.button) 
+	{
+	  padding: 0.33333rem 0;
+	  color: #008CBA;
+	  display: block;
+	  margin: 0;
+	  padding: 0.38889rem 0.77778rem;
+	}
+	
+}

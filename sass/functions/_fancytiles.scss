@@ -1,0 +1,45 @@
+@function divide-cols($colnum) {
+  @return 100%/$colnum - 2%;
+}
+
+
+@mixin fancytiles($desktop-columns, $tablet-columns: $desktop-columns, $mobile-columns: 1, $small-break: 0, $medium-break: $tablet-device-width, $large-break: $row-max-width) {
+
+  // These styles apply to all shift-columns
+  display: inline-block;
+  float: left;
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
+
+  // IE8 fallback
+  width: divide-cols($mobile-columns);
+
+  @include respond("max-width: #{$small-break}") 
+  {
+    width: divide-cols($mobile-columns) + 2%;
+  }
+
+	
+  @media only screen and (min-width: $min-device-width) and (max-width: $large-break)
+  {
+    width: divide-cols($tablet-columns);
+	margin-right:2%;
+	
+	&:nth-child(#{$tablet-columns}n+0)
+	{
+		  margin-right:0;
+	}	 
+  }
+  
+ 
+  @include respond("min-width: #{$large-break}") 
+  {
+    width: divide-cols($desktop-columns);
+	margin-right:2%;
+	
+	&:nth-child(#{$desktop-columns}n+0)
+	{
+		margin-right:0; 
+	}	 
+  }
+}

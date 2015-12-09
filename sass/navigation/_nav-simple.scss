@@ -1,0 +1,138 @@
+/* Simple navigation - v0.1.1 */
+nav {
+    
+    background-color:$nav-bg-color;
+    
+    ul {
+    
+        list-style-type:none;
+        display:table;
+        table-layout: fixed;
+        width:100%;
+        margin-bottom:0;
+        
+        li {
+        
+            display:table-cell;
+            width:100%;
+            text-align:center;
+            position:relative;
+            padding-bottom:0;
+            
+            &.last {
+                background-color:darken($nav-link-bg-color, 15%);
+               
+               a{
+                    
+                    &:hover {
+                        background-color:darken($nav-link-bg-color, 35%);
+                    }
+               }
+            }
+        
+            a {
+
+                color:$nav-link-color;
+                font-size:1.05em;
+                display:block;
+                transition:all ease 0.45s;
+                padding:6px 0; 
+                
+                &:hover, &.active {
+                    color:white;
+                    background-color:darken($nav-link-bg-color, 15%);
+                    display:block;
+                } 
+            }
+        }
+    }
+    
+    &.fixed {
+        box-shadow:0 2px 12px rgba(0,0,0,0.25);  
+        z-index:99; 
+    }
+    // Hide mobile navigation on larger viewports
+    .mobile-nav {
+        display:none;
+    }
+}
+
+@media only screen and (max-width:$tablet-device-width) {
+    
+	.nav-bar-row {
+    margin-bottom:30px;   
+}
+
+
+    nav {
+        
+      position:relative;
+        
+      .mobile-nav {
+        display:block;
+        padding:12px 0;
+		height:$nav-height;
+        width:100%;
+        background-color: $nav-bg-color-mobile;
+        color:white;
+        text-align:center;
+        font-size:1.2em; 
+     }
+    
+     ul {
+        display:none;
+        position:absolute;
+        background-color:$nav-bg-color-mobile;
+        padding:12px;
+        margin-top:0;
+        
+        li {
+            display:block;
+            width:100%;
+            padding:0 8px;
+            
+             &.last {
+                background-color:$nav-bg-color-mobile;
+                
+                a {
+                    background-color:darken($nav-link-bg-color, 15%);   
+                }
+             }
+            
+            a {
+                display:block; 
+                border-bottom:2px solid darken($nav-bg-color-mobile, 15%);
+                color:$nav-link-color-mobile;
+                
+                &:hover {
+                    background-color:darken($nav-bg-color-mobile, 15%);
+                    color:white;
+                    border-bottom:2px solid darken($nav-bg-color-mobile, 15%);   
+                }
+            }
+        }
+     }
+        
+    }
+}
+
+.scrollTop {
+    position: fixed;
+    display:none;
+    z-index: 9999;
+    bottom: 18px;
+    right: 18px;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    line-height: 29px;
+    font-weight: bold;
+    cursor: pointer;
+    transition:all ease-in-out 0.45s;
+    box-shadow:none;
+    
+    &:hover {
+        box-shadow:0 0 12px rgba(0,0,0,0.60);   
+    }
+}

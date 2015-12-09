@@ -1,0 +1,21 @@
+/* Dropdowns */
+
+.dropdown {
+	width:auto;
+	
+	 &:after {
+		content: "\e74f";
+		font-family: $icons;
+		z-index: 0;
+		position:absolute;
+		right: 8%;
+		top: 50%;
+		margin-top: -12px;
+		color: $body-font-color;
+	}
+	
+	ul {
+		
+			
+	}
+}

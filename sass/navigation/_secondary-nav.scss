@@ -1,0 +1,64 @@
+/*****************************************************
+*
+* SECONDARY NAVIGATION
+*
+******************************************************/
+
+.sec-header {
+    background-color: #fff;
+    border-bottom: 2px solid rgb(192, 192, 192);
+	padding:5px 0;
+    height: 53px;
+    width: 100%;
+}
+
+ul.nav-sec 
+{
+	width:100%;
+    display:table;
+	
+	li 
+	{
+		display:table-cell;
+		color: #3b3b3a;
+		padding: 8px;
+		position: relative;
+			
+		a 
+		{ 
+			color: $body-font-color; 
+			
+			&:hover,
+			&:focus 
+			{
+				border-bottom: 4px solid steelblue;
+			}
+		}
+		
+		&.redNumber
+		{
+			font-weight:bold;
+			font-size:1.65em;
+			color:$secondary-color;
+		}
+	}
+}
+
+
+.search-button
+{
+	height:40px !important;
+	width:40px;
+	margin-left:-2px !important;
+	color:#fff;
+	top:-1px;
+}
+
+.secondary-nav
+{
+		@media only screen and (max-width:$tablet-device-width) 
+		{
+			display:none;
+		}
+}
+

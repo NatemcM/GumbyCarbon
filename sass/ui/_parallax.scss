@@ -1,0 +1,10 @@
+.parallax {
+  background-attachment: fixed !important;
+  padding:50px 0;
+}
+
+.oldie, .ie9 {
+	.parallax {
+		background-attachment: static !important;
+	}
+}

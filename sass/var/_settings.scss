@@ -1,0 +1,439 @@
+/** 
+* READ ME
+* - How to use this file 
+* This file contains all the variables used throughout 
+* the framework, from colours to typography and grid
+* settings to navigations. Read through these variables
+* carefully, as they form the basis for all visual 
+* elements on the website. When updating or changing 
+* the stylesheet, use the variables below. This will 
+* not only save you a shit load of time but also keep
+* things organised and trackable.
+*/
+
+/*****************************************************
+*
+* Gird Settings
+*
+******************************************************/
+
+$row-max-width: 							1080px !default;    		// grid width = 1080 (HD resolution)
+$gutter-in-px: 								20px !default;      		// 20px
+$cols: 										12 !default;              	// 12 Column Default Grid
+$hybrid: 									16 !default;				// 16 Column Default Hybrid Grid
+
+/*****************************************************
+*
+* Viewpoint/ Device Settings
+*
+******************************************************/
+
+$min-device-width: 							420px; 						// iPhone Portrait - 320px
+$tablet-device-width: 						768px;						// iPad Portrait
+$document-width: 							$row-max-width;				// Default Document
+$max-device-width: 							2880px;						// Max Document Size
+
+/*****************************************************
+*
+* Spacing
+*
+******************************************************/
+
+$nav-distance: 								0; 							// Navigation distance from the top of the viewport
+
+/*****************************************************
+*
+* Typography
+*
+******************************************************/
+$font-family: 								'Roboto', sans-serif; 	// Font family -- to be updated inline with brand guidelines
+$header-font-family:						'Oswald', sans-serif;
+$header-display-font: 						bold italic 72px georgia, times new roman, serif;
+$font-style-italic:							italic;
+$icons: 									entypo;
+$font-smoothing: 							antialiased;
+
+/*****************************************************
+*
+* Font Weights
+*
+******************************************************/
+
+$font-weight-bold: 							700;
+$font-weight-semibold: 						600;
+$font-weight-medium: 						500;
+$font-weight-regular: 						400;
+$font-weight-light: 						300;
+$font-weight-thin: 							300;
+
+$header-font-weight: 						$font-weight-regular;
+$body-font-weight: 							$font-weight-regular;
+$type-font-weight:							$font-weight-regular;
+$link-font-weight: 							$font-weight-regular;
+$button-font-weight: 						$font-weight-semibold;
+$tabs-font-weight: 							$font-weight-semibold;
+
+/*****************************************************
+*
+* Vertical Rhythm Spacing
+*
+******************************************************/
+
+$base-line-height: 							26px !default;
+$rhythm-spacing: 							.168;
+$rhythm-height: 							.711;
+
+/*****************************************************
+*
+* Modular Scale Settings
+*
+******************************************************/
+ 
+$ms-ratio:									$golden; 					// Ratio for Modular Scale
+$ms-base: 									14px 42px;
+$base-font-size: 							ms(0);
+
+/*****************************************************
+*
+* Sizing
+*
+******************************************************/
+
+$xsmall:									ms(-2);
+$small: 									ms(-1);
+$norm: 										ms(0);						// $base-font-size (13px == default)
+$med: 										ms(1);
+$large: 									ms(2);
+$larger: 									ms(3);
+$xlarge:									ms(4);
+$xxlarge: 									ms(5);
+$xxxlarge: 									ms(6);
+$reallybig: 								ms(8);
+$tremendous: 								ms(9);
+$absurd: 									ms(10);
+
+/*****************************************************
+*
+* Typography Colors
+*
+******************************************************/
+
+$header-font-color: 						#444444 !default;
+$header-link-color: 						#d04526 !default;
+$header-link-hover-color: 					#c03d20 !default;
+
+$body-font-color: 							#242424 !default;
+$body-link-color: 							#457ba2 !default;
+$body-link-hover-color: 					#275779 !default;
+
+/*****************************************************
+*
+* UI Colors
+*
+* Based on Google Material Design Theme recomendations 
+*
+******************************************************/
+
+/*==================================================
+	Google Material Design Colours 
+==================================================*/
+
+$dark-primary-color: 						$clr-blue-grey-700;
+$primary-color: 							$clr-blue-grey;
+$light-primary-color: 						$clr-blue-grey-100;
+$accent-color: 								$clr-lime;
+$default-color: 							$clr-grey-700;
+$info-color: 								$clr-grey-100;
+
+/*==================================================
+	Outdated colors - new themes based on 
+	Google theme recomendations
+==================================================*/
+
+$black: 									#000; // Needs to go
+$white: 									#fff; // Needs to go
+
+/*==================================================
+	Define alert colours
+==================================================*/
+
+$danger-color: 								$clr-red-800;
+$warning-color:								$clr-amber;
+$success-color: 							$clr-light-green;
+
+/*==================================================
+	Define hover colours
+==================================================*/
+
+$primary-hover-color: 						$clr-blue-grey-400;
+$light-primary-hover-color: 				$clr-blue-grey-700;
+$dark-primary-hover-color: 					$clr-blue-grey-900;
+$accent-hover-color: 						$clr-lime-700;
+$default-hover-color: 						$clr-grey-900; 
+$info-hover-color: 							$clr-grey-400;
+
+$danger-hover-color: 						$clr-red-900; 
+$warning-hover-color: 						$clr-amber-700; 
+$success-hover-color: 						$clr-light-green-700; 
+
+/*==================================================
+	Define non-theme colours
+==================================================*/
+ 
+$global-bg-color: 							$white;
+$horizontal-rule-color: 					#ccc !default;
+
+/*==================================================
+	Define outdated variable names with
+	replacements
+==================================================*/
+
+$secondary-color: 							$accent-color;
+$secondary-hover-color: 					$accent-hover-color;
+
+/*****************************************************
+*
+* Global Borders
+*
+******************************************************/
+
+$button-radius: 							5px !default;
+$metro-radius: 								0 !default; 
+$bigger-radius: 							11px;
+
+/*****************************************************
+*
+* Buttons
+*
+******************************************************/
+
+// Padding
+$default-button-padding: 					32px;
+
+// Width
+$min-button-width: 							88px;
+
+// Height
+$button-height: 							36px;
+$button-font-size: 							$norm;
+
+// Border 
+$btn-border-width: 							2px;
+$btn-border-style: 							solid;
+
+
+/*****************************************************
+*
+* Form Elements
+*
+******************************************************/
+
+$form-text-input-border-style:				solid;
+$form-text-input-border-color: 				$clr-grey-200;
+$form-text-input-border-width: 				2px;
+
+$form-text-input-background: 				$white;
+$form-text-input-placeholder-color: 		$default-color;
+$form-text-input-color: 					$clr-grey-700;
+
+$input-stroke-color-active:  				$accent-color;
+$picker-background-color:  				    white;
+
+$fieldset-border-color:  				    $clr-grey-200;
+$fieldset-border-weight:  				    2px;
+
+$form-select-stroke: 						$clr-grey-400;
+$form-select-background: 					$white;
+$form-select-color: 						$clr-grey-400;
+
+$label-color: 								$clr-grey-400;
+$radio-label-color: 						$clr-grey-700;
+
+
+/*****************************************************
+*
+* Tabs
+*
+* Tabs have had a major over haul, there are no longer
+* different types of tabs (pill and verticle are gone)
+* and have been replaced with a simple design
+******************************************************/
+						
+$tab-nav-height: 								52px;
+$tab-nav-color: 								$body-font-color;
+$tab-nav-border-weight: 						4px;
+$tab-nav-border-style: 							solid;
+$tab-nav-hover-border-color: 					$accent-color;
+$tab-nav-active-border-color: 					$accent-color;
+
+$tab-content-padding: 							20px 0;
+
+/*****************************************************
+*
+* Navigation 
+*
+******************************************************/
+
+$nav-bg-color:                              #424242;
+$nav-link-color:                            white;
+$nav-link-bg-color:                         #424242;
+$nav-height: 								45px;
+
+$nav-bg-color-mobile:                       $secondary-color;
+$nav-link-color-mobile:                     white;
+$nav-link-bg-color-mobile:                  $primary-color;
+
+$main-nav-child-level-border-width:			0 1px 3px;
+$main-nav-child-level-border-style:			solid;
+$main-nav-child-level-border-color:			silver;
+
+/*****************************************************
+*
+* Drawers and dialogs
+*
+******************************************************/
+
+$dialog-overlay-color: 						rgba(0, 0, 0, 0.6);
+$dialog-window-color: 						$white;
+
+$drawer-background-color:					#3e4144;
+$drawer-inner-shadow-x-offset: 				0;
+$drawer-inner-shadow-y-offset: 				2px;
+$drawer-inner-shadow-blur: 					5px;
+$drawer-inner-shadow-color: 				#313436;
+
+/*****************************************************
+*
+* Tables
+*
+******************************************************/
+
+$table-bgcolor: 							white;
+$table-border: 								none; // Can write: 1px solid #eee;
+$table-text-align: 							left;
+$table-number-align: 						right; // New var, make sure any numeric fields have the number class i.e. <td class="number"></td>
+
+$table-thead-bgcolor: 						none;
+$table-thead-font-size: 					0.9em;
+$table-thead-font-weight: 					$font-weight-semibold;
+$table-thead-valign: 						central;
+$table-thead-border-bottom: 	 			1px solid $clr-grey-300;
+
+$table-tbody-font-color: 					$clr-grey-800;
+$table-tbody-valign: 						central;
+
+$table-row-hover-color: 					$clr-grey-200;
+$table-row-active-color: 					$clr-grey-100;
+$table-row-border-bottom: 	 				1px solid $clr-grey-300;
+
+/**
+* No longer in use
+*
+* // .rounded
+* $table-border-radius: 						4px;
+*
+* // .striped
+* $table-stripe-bgcolor: 						#e5e5e5;
+*
+* $table-row-first-cell-font-weight: 			bold;
+* $table-border-size: 						    1px;
+* $table-border-style: 							solid;
+* $table-border-color: 							#e5e5e5;
+* $table-cell-border-size: 						1px;
+* $table-cell-border-color: 					#e5e5e5;
+* $table-cell-border-style: 					solid;
+*/
+
+/*****************************************************
+*
+* Tooltips
+*
+******************************************************/
+
+$tt-bgcolor: 									$clr-grey-700;
+$tt-font-weight: 								$font-weight-medium;
+$tt-min-height: 								32px;
+
+// Obsolte
+// $tt-pretty: 									no;							// yes = pretty / no = flat
+// $tt-position: 								top;						// position: top / bottom / left / right
+// $tt-align: 									left;						// text and caret alignment: left / right
+// $tt-min-width: 								130px; 
+
+/*****************************************************
+*
+* Floats
+*
+******************************************************/
+
+$default-float: 							left;
+$switch-float: 								right;
+
+/*****************************************************
+*
+* Margins
+*
+* Use these classes to increase margins between rows 
+******************************************************/
+
+$has-margin-bottom:							50px;
+$has-margin-top:							50px;
+
+/*****************************************************
+*
+* Sub Navigation 
+*
+******************************************************/
+
+$sub-nav-border-style:						dashed;
+$sub-nav-border-width:						0 0 1px;
+$sub-nav-border-color:						lighten($black, 25%);
+
+$sub-nav-link-color:						#583c76;
+$sub-nav-link-color-hover:					#806A96;
+$sub-nav-link-font-size:					13px;
+$sub-nav-link-padding:						5px 5px 5px 10px;
+$sub-nav-transition:						all ease 0.35s;
+
+
+/*****************************************************
+*
+* VCARDS
+*
+******************************************************/
+
+$vcard-header-font-size:					ms(2);
+$vcard-header-font-weight:					$font-weight-bold;
+
+/*****************************************************
+*
+* ALT ROW - Alternative Row
+* This is the striped backgound used to break up long 
+* pages into easier chunks
+*
+******************************************************/
+
+$alt-background-color:						$clr-grey-100;
+$alt-padding:								50px 0;
+$alt-margin:								$has-margin-top 0 $has-margin-bottom;
+
+/*****************************************************
+*
+* Animations 
+*
+******************************************************/
+
+$g-transition-duration: 					0.2s; // 2ms
+$g-transition-property: 					all;
+$g-transition-timing-function: 				ease;
+
+$global-transition: 						$g-transition-duration $g-transition-property $g-transition-timing-function;
+
+
+/*****************************************************
+*
+* PAGE FOOTER
+*
+******************************************************/
+
+$page-footer-height:						215px;

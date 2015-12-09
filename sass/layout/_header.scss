@@ -1,0 +1,61 @@
+/*****************************************************
+*
+* DOCUMENT HEADER
+*
+******************************************************/
+
+#header 
+{
+  background-color: $primary-color;
+  
+  
+}
+
+.logo-container
+{
+	text-align:left;
+    margin:1em 0;
+
+	p {
+		line-height:2.3em;
+        font-size: 1.7em;
+		position:relative;
+		z-index:200;
+		font-family: "Oswald",sans-serif;
+		font-weight: 400;
+		color: #444;
+		margin-top:0.4em;
+	}
+	
+	@media only screen and (max-width:$tablet-device-width) 
+	{ 
+		text-align:left;
+	}
+	
+	img 
+	{
+		width:100%;
+		
+		@media only screen and (max-width:$tablet-device-width) 
+		{ 
+			width:200px;
+		}
+	}
+}
+
+.intro-block {
+    margin-top:5.5em;   
+}
+
+.scroll {
+ 
+ label {
+      font-style: italic;
+      color: grey;  
+ }
+ 
+ i {
+     font-size:1.4em; 
+     font-weight:bold;
+ }
+}

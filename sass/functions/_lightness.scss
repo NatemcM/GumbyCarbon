@@ -1,0 +1,16 @@
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return #212121; // Lighter backgorund, return dark color
+  } @else {
+    @return #ffffff; // Darker background, return light color
+  }
+}
+
+
+@function set-background-color($color) {
+  @if (lightness($color) > 50) {
+    @return darken($color, 15%); // Lighter backgorund, return dark color
+  } @else {
+    @return lighten($color, 15%); // Darker background, return light color
+  }
+}

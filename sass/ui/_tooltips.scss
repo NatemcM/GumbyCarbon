@@ -1,0 +1,51 @@
+/* Tooltips */
+
+.ttip {
+	  position: relative;
+
+	  &:after {
+		display: inline-block;
+		background: $tt-bgcolor;
+		@include border-radius(3px);
+		
+		padding:0 16px;
+		height:$tt-min-height;
+		
+		min-width:$min-button-width;
+		
+		position: absolute;
+		text-align:center;
+		top:80%;
+		
+		left:50%;
+		transform: translateX(-50%);
+		white-space: nowrap;
+		
+		z-index:999;
+	
+		color:set-text-color($tt-bgcolor);
+		content: attr(data-tooltip);
+		line-height: $tt-min-height;
+		font-size: $norm;
+		font-weight: $tt-font-weight;
+		font-style: normal;
+		transition:$global-transition;
+	
+		@include opacity(0);
+		pointer-events: none;
+	  }
+	
+	  
+	  &:hover:after,
+	  &:hover:before {
+		@include opacity(0.9);
+		top:105%;
+	  }
+	cursor: pointer;
+}
+
+.ttip:after, .ttip:before {
+	@include respond(portrait-tablets) {
+		display: none;
+	}
+}

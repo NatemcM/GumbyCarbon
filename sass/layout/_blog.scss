@@ -1,0 +1,45 @@
+ .postmeta
+ {
+	margin-bottom: 50px;
+	background-color: whitesmoke;
+	padding: 8px;
+ }
+ 
+ .pageList
+ {
+	li
+	{
+		display: inline-block;
+		color: #222222;
+		font-size: 0.77778rem;
+		height: 1.33333rem;
+		margin-left: 0.27778rem;
+		
+		a
+		{
+			border-radius: 3px;
+			transition: background-color 300ms ease-out;
+			background: none;
+			color: #999999;
+			display: block;
+			font-size: 1em;
+			font-weight: normal;
+			line-height: inherit;
+			padding: 0.05556rem 0.55556rem 0.05556rem;
+			
+			&.active
+			{
+				  background: #008CBA;
+				  color: #FFFFFF;
+				  font-weight: bold;
+			}
+			
+			&:hover
+			{
+				background: #008CBA;
+				color: #FFFFFF;
+				font-weight: bold;
+			}
+		}
+	}
+ }

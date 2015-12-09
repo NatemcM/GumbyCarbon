@@ -1,0 +1,95 @@
+/* Tables */
+
+table {
+	display: table;
+	background-color: $table-bgcolor;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-bottom: 20px;
+	width: 100%;
+	border: none;
+
+	caption {
+		text-align: center;
+		font-size: $larger;
+		padding: .75em;
+	}
+	
+	tbody > 
+	tr {
+		transition:$global-transition;
+		border-bottom:$table-row-border-bottom;
+		
+		&:last-child {
+			border-bottom:none;
+		}
+		
+		&:hover {
+			background-color:$table-row-hover-color;	
+		}
+		
+		&.active {
+			background-color:$table-row-active-color; 
+		}
+	}
+	
+	thead th,
+	tbody td,
+	tr td {
+		display: table-cell;
+		padding: 10px;
+		vertical-align: $table-tbody-valign;
+		text-align: $table-text-align;
+		border-top: none;
+		color:$clr-grey-400;
+		font-size:$norm;
+		
+		.number {
+			text-align:$table-number-align;	
+		}
+	}
+
+	tr td, tbody tr td {
+		font-size: $norm;
+		color:$table-tbody-font-color;
+		
+	}
+
+
+	thead {
+		color:$clr-grey-400;
+		background-color: $table-thead-bgcolor;
+		
+		tr {
+			border-bottom:$table-thead-border-bottom;
+		
+			> th,
+			> td {
+				font-size: $table-thead-font-size;
+				font-weight:$table-thead-font-weight;
+				vertical-align:$table-thead-valign;
+				position:relative;
+				cursor:pointer;
+				
+				&:before {
+					content: "\e760";
+					font-family: $icons;
+					z-index: 0;
+					position:absolute;
+					left:0;
+					top: 50%;
+					margin-top: -12px;
+					color:transparent;
+					transition: $global-transition;
+				}
+	
+				&:hover {
+					
+					&:before {
+						color: $clr-grey-400;
+					}
+				}
+			}
+		}	
+	}
+}

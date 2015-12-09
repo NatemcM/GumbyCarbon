@@ -1,0 +1,526 @@
+/* Form Styles */
+
+@import "../functions/forms";
+
+form {
+  margin: 0 0 18px;
+  label {
+	color: $label-color;
+    display: block;
+    @include font-size($norm);
+    @include adjust-leading-to(1);
+    cursor: pointer;
+    margin-bottom: 9px;
+	
+	&.floating {
+		position: absolute;
+		z-index: 999;
+		top: percentage((strip-units($base-font-size)) / 100) - 2;
+		margin-left:10px;
+		cursor:text;
+		margin-bottom:0;
+		padding:0 4px;
+		transition:all ease 0.12s;
+	}
+	
+    &.inline {
+      display: inline-block;
+      padding-right: 20px;
+    }
+  }
+  
+  label.radio, label.checkbox {
+		color: $radio-label-color;
+  }
+  
+  input:focus + label.floating {
+	  top:-15px;
+	  background-color:white;
+  }
+  
+  dt {
+    margin: 0;
+  }
+  textarea {
+    height: 150px;
+  }
+  ul, ul li {
+    margin-left: 0;
+    list-style-type: none;
+  }
+  fieldset {
+    @include rhythm-borders($fieldset-border-weight,1,$norm,solid);
+    border-color: $fieldset-border-color;
+    margin: 18px 0;
+    legend {
+      padding: 5px 10px;
+    }
+  }
+}
+
+.field {
+  position: relative;
+  max-width: 100%;
+  margin-bottom: 10px;
+  vertical-align: middle;
+  // Font-size 16px for weird form style error
+  font-size: 16px;
+  //overflow: hidden;
+
+  input, input[type="*"], textarea {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    resize: none;
+    -webkit-appearance: none;
+    font-family: $font-family;
+    font-weight: $font-weight-light;
+    @include font-size($norm);
+    @include box-shadow(none);
+  }
+  
+  .input {
+    position: relative;
+    padding: 0 10px;
+    background: #fff;
+	border-style: $form-text-input-border-style;
+	border-width: $form-text-input-border-width;
+	border-color: $form-text-input-border-color;
+	@include input-line-and-height($button-height);
+	
+    @include font-size($norm);
+    @include border-radius(3px);
+	
+    &.search {
+      @include input-line-and-height($button-height);
+      @include shape(oval);
+      padding-right: 0;
+    }
+	&:focus {
+		border-color:$input-stroke-color-active;
+	}
+  }
+  .input.textarea {
+    height: auto;
+  }
+}
+
+input, .input {
+  @each $width in $field-sizes {
+    &.#{nth($width, 1)} {
+      @include input-size(#{nth($width, 1)});
+      margin:0;
+	  
+	  &.collapse {
+		  
+		  // Increase element hirarchy to so border is full
+		  &:focus {
+			z-index:999;  
+		  }
+		  
+		  @include collapse-input-size(#{nth($width, 1)});
+		  
+		  &:first-child {
+			margin-right:0;
+			margin-left: 0;
+		  }
+		 
+	  }
+	  
+      &:last-child {
+       	margin-left: -8px;
+      }
+      &:first-child {
+        margin-right: 3.94%;
+        margin-left: 0;
+      }
+      &:first-child:last-child {
+        margin: 0;
+      }
+    }
+  }
+}
+
+label + {
+  @include input-sizes-list() {
+    &:last-child {
+      margin-left: 0;
+    }
+  }
+}
+
+@include respond(document-width) {
+  .xxwide:first-child, .xxwide:last-child {
+    margin-right: 0%;
+  }
+}
+
+/* remove inline-block white-space — A 0px font-size = 0px of white space */
+.prepend, .append {
+  font-size: 0;
+  white-space: nowrap;
+  padding-bottom: 3.5px;
+}
+
+.prepend input,
+.prepend .input,
+.append input,
+.append .input {
+  display: inline-block;
+  max-width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.prepend input,
+.prepend .input,
+.prepend.append input:last-child,
+.append *:last-child {
+  @include border-radius(0px $button-radius $button-radius 0);
+}
+
+.append input,
+.append .input,
+.prepend.append input:first-child,
+.prepend *:first-child {
+  @include border-radius($button-radius 0 0 $button-radius);
+}
+
+.prepend.append input {
+  @include border-radius(0);
+}
+
+.prepend.append input:last-child {
+  margin-left: -2px;
+}
+
+.prepend .adjoined, .append .adjoined, .prepend .btn, .append .btn {
+  @include font-size($norm);
+  position: relative;
+  display: inline-block;
+  margin-bottom:0;
+  min-width:0;
+  z-index: 99;
+}
+.prepend .btn, .append .btn {
+  a, input, button {
+	   @include font-size($norm);
+	   min-width:0 !important;
+  }
+}
+
+.prepend {
+	input, .input {
+		&:last-child {
+			margin-left:0;
+		}
+    }	
+}
+.prepend .adjoined, .append .adjoined  {
+  padding: 0 10px 0 10px;
+  background: $default-color;
+  border-style:solid;
+  border-color:darken($default-color, 10%);
+  border-width:$form-text-input-border-width;
+  font-family: $font-family;
+  font-weight: $font-weight-bold;
+  color: set-text-color($default-color);
+  @include font-size($norm);
+  
+  @include input-line-and-height($button-height);
+  
+  transition:all ease 0.2s;
+}
+
+input:focus {
+	z-index:200;
+	.prepend .adjoined, .append .adjoined {
+	
+		border-color:$input-stroke-color-active;
+	}
+		
+} 
+
+.prepend .adjoined, .prepend .btn {
+  margin-right: -2px;
+}
+
+.adjoined:first-child {
+  margin-left: 0 !important;
+}
+
+.append .adjoined, .append .btn {
+  margin-left: -2px;
+}
+
+.append button, .prepend button {
+  display: inline-block;
+}
+
+.prepend input:first-child,
+.append input:first-child,
+.prepend .input:first-child,
+.append .input:first-child {
+  margin-right: 0;
+}
+
+.double input, .double .input {
+  width: 50% !important;
+  &:last-child {
+    margin-left: -2px;
+  }
+}
+
+.field {
+  input, .input, textarea, .textarea, .radio span, .checkbox span, .picker {
+    @include transition-duration(.2s);
+  }
+  @each $error in danger $danger-color, warning $warning-color, success $success-color {
+    &.#{nth($error, 1)} {
+      &:after {
+        @if($icons != ""){
+          font-family: "#{$icons}";
+          @if nth($error, 1) == danger {
+            content: "#{$entypo-icon-cancel-circled}";
+          }
+          @if nth($error, 1) == warning {
+            content: "#{$entypo-icon-attention}";
+          }
+          @if nth($error, 1) == success {
+            content: "#{$entypo-icon-check}";
+          }
+        font-size: $norm;
+        position: absolute;
+        top: percentage((strip-units($base-font-size)) / 100) - 2;
+        right: 15px;
+        z-index: 999;
+        color: nth($error, 2);
+        }
+      }
+
+      &.no-icon:after {
+        display: none;
+      }
+
+      // <input> does not allow :before & :after
+      // pseudo elements. Removing validation
+      // icons from those elements to avoid
+      // edge-case styling issues
+      &.append:after, &.prepend:after {
+        content: "";
+      }
+      input, .input, textarea, .textarea, .radio span, .checkbox span, .picker {
+        border-color: nth($error, 2);
+      }
+
+      input, .input, textarea, .textarea,
+      .radio span, .checkbox span, .picker,
+      input::-webkit-input-placeholder,
+      textarea::-webkit-input-placeholder,
+      input:-moz-placeholder,
+      textarea:-moz-placeholder
+      textarea { color: nth($error, 2); }
+
+    }
+  }
+
+  .picker {
+    @each $error in danger $danger-color, warning $warning-color, success $success-color {
+      &.#{nth($error, 1)} {
+        border-color: nth($error, 2);
+        color: nth($error, 2);
+        //background: lighten(nth($error, 2), 35%);
+        @include transition-duration(.2s);
+        select, &:after { color: nth($error, 2); }
+      }
+    }
+  }
+}
+
+
+.field .text input[type="search"] {
+  -webkit-appearance: textfield;
+}
+
+// checkboxes/radio buttons only styled where JS supported
+.no-js {
+  .radio input {
+    -webkit-appearance: radio;
+    margin-left: 1px;
+  }
+  .checkbox input {
+    -webkit-appearance: checkbox;
+  }
+  .radio input, .checkbox input {
+    display: inline-block;
+    width: 18px;
+  }
+}
+
+.js .field {
+  .radio, .checkbox {
+	  
+	  &.checked {
+			span:before {
+				width: 50px;
+				height: 50px;
+				transform:scale3d(0.1,0.1,0.1);
+				border-radius: 100%;
+				position: absolute;
+				content: '';
+				background-color: transparent;
+				top:-18px;
+				left:-18px;
+				animation-name: flash;
+    			animation-duration: 0.4s;
+				animation-timing-function:ease-in-out;
+			}
+	  }
+	  
+    @each $error in $ui-coloring  {
+      &.#{nth($error, 1)} {
+        color: nth($error, 2);
+      
+        span {
+          border-color: nth($error, 2);
+          color: nth($error, 2);
+          @include transition-duration($global-transition);
+        }
+      }
+    }
+    position: relative;
+    &.checked i {
+      position: absolute;
+      top: -2px;
+      left: -8px;
+      line-height: 18px;
+	  transform: scale(0.8);
+    }
+    span {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      position: relative;
+      top: 4px;
+      border: solid 2px #ccc;
+      background: #fefefe;
+    }
+    input[type="radio"], input[type="checkbox"] {
+      display: none;
+    }
+  }
+  .radio span {
+    @include border-radius(100%);
+  }
+  .checkbox span {
+    @include border-radius(4px);
+  }
+}
+
+.field .text input[type="search"] {
+  -webkit-appearance: textfield;
+}
+
+
+/* Form Picker Element (<select>) */
+
+.picker {
+  position: relative;
+  width: auto;
+  display: inline-block;
+  margin: 0 0 2px 1.2%;
+  overflow: hidden;
+  border: 2px solid darken($picker-background-color, 5%);
+  @include border-radius(4px);
+  font-family: $font-family;
+  font-weight: $font-weight-semibold;
+  background-color: $picker-background-color;
+  &:after {
+    content: "\e74f";
+    font-family: $icons;
+    z-index: 0;
+    position:absolute;
+    right: 8%;
+    top: 50%;
+    margin-top: -12px;
+    color: $body-font-color;
+  }
+  &:hover {
+	background:darken($picker-background-color,4%);  
+  }
+  &:first-child {
+    margin-left: 0;
+  }
+  select {
+    position: relative;
+    display: block;
+    min-width: 100%;
+    width: 135%;
+    height: 34px;
+    padding: 6px 45px 6px 15px;
+    color: $body-font-color;
+    border: none;
+    background: transparent;
+    outline: none;
+    -webkit-appearance: none;
+    z-index: 99;
+        cursor: pointer;
+    @include font-size($norm);
+  }
+  select::-ms-expand {
+    display: none;
+  }
+}
+
+/* Form Multi-picker Element (<select> multiple) */
+.multi-picker {
+  position: relative;
+  width: auto;
+  display: inline-block;
+  margin: 0 0 2px 1.2%;
+  overflow: hidden;
+  border: 2px solid darken($picker-background-color, 5%);
+  @include border-radius(4px);
+  font-family: $font-family;
+  font-weight: $font-weight-semibold;
+  background-color: $picker-background-color;
+  
+  height: auto;
+  &:first-child {
+    margin-left: 0;
+  }
+  select[multiple] {
+    position: relative;
+    display: block;
+    min-width: 100%;
+    width: 100%;
+    height: auto;
+    padding: 6px 20px 6px 15px;
+    color: $body-font-color;
+    border: none;
+    background: #fff;
+    outline: none;
+    -webkit-appearance: none;
+    z-index: 99;
+    cursor: pointer;
+    @include font-size($norm);
+  }
+}
+
+@keyframes flash {
+    0% {
+		background-color:rgba(205,205,205,0);
+		transform:scale3d(0.1,0.1,0.1);
+	}
+    35% {
+		transform:scale3d(1,1,1);
+		background-color:rgba(205,205,205,0.50);
+	}
+	100% {
+		transform:scale3d(0.1,0.1,0.1);
+		background-color:rgba(205,205,205,0);
+	}
+}

@@ -1,0 +1,47 @@
+/**
+* Fonts 
+* =====
+*
+* In Gumby 2.6 fonts were called using the @import
+* directive, however internet explorer has bad 
+* perfromance issues when one external stylesheet
+* links to another using @import. Therefore we 
+* recomened that all fonts are addded loaded using
+* the following method:
+*
+* Place your fonts just before your main gumby css 
+* file-
+* <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans|Lobster">
+* <link rel=stylesheet" type="text/css" href="gumby.css">
+*
+* Notice how you can call more than one font at a time
+* when you seperate font names with a | (pipe). This is 
+* the recomended way of calling fonts. 
+*  
+*/
+
+// Import Google Web Fonts - You can still import them using the syntax below
+// @import url(http://fonts.googleapis.com/css?family=PT+Sans|Oswald:400,700);
+
+// Set local icon font
+@font-face {
+  font-family: '#{$icons}';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/icons/#{$icons}.eot);
+  src: url('../fonts/icons/#{$icons}.eot?#iefix') format('ie9-skip-eot'),
+       url('../fonts/icons/#{$icons}.woff') format('woff'),
+       url('../fonts/icons/#{$icons}.ttf')  format('truetype');
+}
+
+// To include your own, local copies of fonts, use the following template
+//
+//@font-face {
+//  font-family: '#{$some-font-variable}';
+//  font-style: normal;
+//  font-weight: 400;
+//  src: url(../fonts/icons/#{$some-font-variable}.eot);
+//  src: url('../fonts/icons/#{$some-font-variable}.eot?#iefix') format('ie9-skip-eot'),
+//       url('../fonts/icons/#{$some-font-variable}.woff') format('woff'),
+//       url('../fonts/icons/#{$some-font-variable}.ttf')  format('truetype');
+//}

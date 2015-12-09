@@ -1,0 +1,85 @@
+/*****************************************************
+*
+* MAIN DOCUMENT
+*
+******************************************************/
+
+.main-wrapper 
+{
+	min-height: 100%;
+	margin: 0 auto -$page-footer-height; // the bottom margin is the negative value of the footer's height
+}
+
+.has-margin-top
+{
+	margin-top:$has-margin-top;	
+}
+
+.has-margin-bottom
+{
+	margin-bottom:$has-margin-bottom;	
+}
+
+.row-gutter
+{
+	margin-top: $gutter-in-px; // add a gutter between each row equalling the gutter of each column
+	
+	&:first-child
+	{
+		margin-top:0;	// reset the margins for the first row
+	}
+}
+
+.alt-row
+{
+  background-color: $alt-background-color;
+  padding: $alt-padding;
+  margin: $alt-margin;
+  
+  h1, h2, h3, h4, h5, h6, p, em, b, span, cite, blockquote, pre {
+    color:white;   
+  }
+}
+
+.inline-table-list
+{
+	display:table;
+	
+	li
+	{
+		display:table-cell;
+		padding:0 8px;
+	}
+}
+
+main 
+{
+	min-height:100%;
+	margin-bottom:-$page-footer-height;
+	
+	&:after
+	{
+		content: "";
+		display: block;
+	}
+}
+
+.page-footer, 
+main:after
+{
+	height:$page-footer-height;
+}
+
+//Newsletter bar
+.newsletter {
+    background-color: #35495C;
+    padding-top: 18px;
+    
+    h1, h2, h3, h4, h5, h6, p, em, b, span, cite, blockquote, pre {
+        color:white;   
+    }
+	
+	h4 {
+		line-height:1em;
+	}
+}

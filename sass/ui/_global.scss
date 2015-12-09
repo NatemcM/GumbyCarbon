@@ -1,0 +1,14 @@
+// Global settings
+
+.raised {
+	transition:all ease 0.2s;
+	box-shadow:0 1px 4px rgba(0,0,0,0.4);	
+
+	&:active, &:hover, &:focus {
+		box-shadow:0 3px 8px rgba(0,0,0,0.4);
+	}
+}
+
+.expand {
+	width:100%;
+}

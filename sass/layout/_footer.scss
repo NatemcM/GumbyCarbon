@@ -1,0 +1,45 @@
+/*****************************************************
+*
+* DOCUMENT FOOTER
+*
+******************************************************/
+
+.footer 
+{
+  background-color: $primary-color;
+  padding-top: 15px;
+  color: #fff;
+  border-bottom: 1px solid darken($primary-color, 10%);
+  
+  p {
+      color:$body-font-color;
+  }
+  
+  ul
+  {
+	li
+	{
+		transition:all 0.45s ease;
+        margin-bottom:4px;
+        color:$body-font-color;
+		
+		&:hover 
+		{
+			background-color: darken($primary-color, 5%);
+		}
+		
+		a
+		{
+			color:$body-font-color;
+			padding:4px;	
+			display:block;
+			
+			&:hover
+			{
+				color:$white;
+			}
+		}
+		
+	}
+  }
+}
